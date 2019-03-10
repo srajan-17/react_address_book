@@ -60,7 +60,7 @@ class App extends Component {
     "telephoneField": ''
   }
 
-  addTodoHandler = (event) => {
+  addEntryHandler = (event) => {
     event.preventDefault();
     let newEntry = {
       FirstName: this.state.FirstName,
@@ -75,11 +75,11 @@ class App extends Component {
     this.setState({telephoneField: ''});
   }
 
-  closeTodoHandler = (key,e) => {
+  removeEntryHandler = (key, e) => {
     let entries = [...this.state.entries];
-    let deleteIndex = todos.findIndex((item)=>item.key===key);
-    todos.splice(deleteIndex, 1);
-    this.setState({"todos":todos});
+    let deleteIndex = entries.findIndex((item) => item.key === key);
+    entries.splice(deleteIndex, 1);
+    this.setState({"entries": entries});
   }
 
   render = () => {
