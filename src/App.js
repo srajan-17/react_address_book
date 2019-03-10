@@ -6,7 +6,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import AllEntries from './AllEntries.js';
-import { generate } from 'randomstring'
+import { generate } from 'randomstring';
 
 class App extends Component {
   state = {
@@ -98,7 +98,7 @@ class App extends Component {
               <Col>
               </Col>
               <Col>
-                <Form.Control placeholder="Search" />
+                <input type="text" placeholder="Search for entries" onKeyPress={this.searchHandler} onChange={this.searchHandler}/>
               </Col>
             </Form.Row>
             </Form>

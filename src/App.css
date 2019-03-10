@@ -1,3 +1,7 @@
 .App {
   text-align: center;
 }
+
+.fa-trash {
+  color: red;
+}

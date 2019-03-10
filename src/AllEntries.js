@@ -11,7 +11,7 @@ function AllEntries(props) {
       <Card className="bg-light border rounded">
         <span key={item.key}
           className="text-right"
-          onClick={props.closer.bind(null, item.key)}>{'\u274e'}</span>
+          onClick={props.closer.bind(null, item.key)}><i class="fa fa-trash"></i></span>
           <Card.Body className="text-left">
             <p><b>First Name:</b> {item.FirstName}</p>
             <p><b>Last Name:</b> {item.LastName}</p>
