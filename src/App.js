@@ -63,6 +63,7 @@ class App extends Component {
   addEntryHandler = (event) => {
     event.preventDefault();
     let newEntry = {
+      key: generate(10),
       FirstName: this.state.FirstName,
       LastName: this.state.LastName,
       Birthday: this.state.Birthday,
@@ -125,7 +126,7 @@ class App extends Component {
                 onChange={(e) => this.setState({telephoneField: e.target.value})}/>
             </Form.Group>
 
-            <Button variant="primary" type="submit" >Add Todo</Button>
+            <Button variant="primary" type="submit" >Add Entry</Button>
 
           </Form>
         </Container>
