@@ -97,7 +97,7 @@ class App extends Component {
       let toBeFiltered = [...this.originalEntriesCopy];
       let filteredEntries = [];
       toBeFiltered.forEach(item => {
-        if (item.FirstName.includes(char) || item.LastName.includes(char) || item.Birthday.includes(char) || item.Telephone.includes(char)) {
+        if (item.FirstName.toLowerCase().includes(char) || item.LastName.toLowerCase().includes(char) || item.Birthday.includes(char) || item.Telephone.includes(char)) {
           filteredEntries.push(item);
         }
       });
