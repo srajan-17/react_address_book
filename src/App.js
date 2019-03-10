@@ -47,8 +47,10 @@ class App extends Component {
       }
     ],
     "collapse": false,
-    "formTitle": '',
-    "formDescription": ''
+    "firstNameField": '',
+    "lastNameField": '',
+    "birthdayField": '',
+    "telephoneField": ''
   }
 
   addTodoHandler = (event) => {
@@ -59,13 +61,15 @@ class App extends Component {
       Birthday: this.state.Birthday,
       Telephone: this.state.Telephone
     };
-    this.setState({todos:[...this.state.todos,newTodo]});
-    this.setState({formTitle:''});
-    this.setState({formDescription:''})
+    this.setState({entries:[...this.state.entries, newEntry]});
+    this.setState({firstNameField:''});
+    this.setState({lastNameField:''});
+    this.setState({birthdayField: ''});
+    this.setState({telephoneField: ''});
   }
 
   closeTodoHandler = (key,e) => {
-    let todos = [...this.state.todos];
+    let entries = [...this.state.entries];
     let deleteIndex = todos.findIndex((item)=>item.key===key);
     todos.splice(deleteIndex, 1);
     this.setState({"todos":todos});
