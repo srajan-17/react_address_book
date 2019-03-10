@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import AllEntries from './AllEntries.js';
 import { generate } from 'randomstring'
@@ -87,9 +88,21 @@ class App extends Component {
     return (
       <div className="App">
         <Container>
-          <header className="App-header text-left">
-            <h1>React Based Address Book</h1>
+          <header>
+            <h1>Address Book</h1>
           </header>
+          <Form>
+            <Form.Row>
+              <Col>
+              </Col>
+              <Col>
+              </Col>
+              <Col>
+                <Form.Control placeholder="Search" />
+              </Col>
+            </Form.Row>
+            </Form>
+            <br />
           <AllEntries 
             entries={this.state.entries}
             closer={this.removeEntryHandler}>

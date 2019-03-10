@@ -13,10 +13,10 @@ function AllEntries(props) {
           className="text-right"
           onClick={props.closer.bind(null, item.key)}>{'\u274e'}</span>
           <Card.Body className="text-left">
-            <p>{item.FirstName}</p>
-            <p>{item.LastName}</p>
-            <p>{item.Birthday}</p>
-            <p>{item.Telephone}</p>
+            <p><b>First Name:</b> {item.FirstName}</p>
+            <p><b>Last Name:</b> {item.LastName}</p>
+            <p><b>Birthday:</b> {item.Birthday}</p>
+            <p><b>Telephone:</b> {item.Telephone}</p>
           </Card.Body>
         </Card>
     </ListGroup.Item>
