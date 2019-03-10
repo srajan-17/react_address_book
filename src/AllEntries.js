@@ -3,10 +3,10 @@ import React from 'react';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 
-function AllEntries (props) {
+function AllEntries(props) {
 
   let entries = [...props.entries];
-  let addressBook = entries.map((item)=>
+  let addressBook = entries.map((item) =>
     <ListGroup.Item key={item.key}>
       <Card className="bg-light border rounded">
         <span key={item.key}
@@ -20,7 +20,7 @@ function AllEntries (props) {
           </Card.Body>
         </Card>
     </ListGroup.Item>
-    )
+    );
 
   return addressBook;
 }

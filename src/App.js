@@ -64,10 +64,10 @@ class App extends Component {
     event.preventDefault();
     let newEntry = {
       key: generate(10),
-      FirstName: this.state.FirstName,
-      LastName: this.state.LastName,
-      Birthday: this.state.Birthday,
-      Telephone: this.state.Telephone
+      FirstName: this.state.firstNameField,
+      LastName: this.state.lastNameField,
+      Birthday: this.state.birthdayField,
+      Telephone: this.state.telephoneField
     };
     this.setState({entries:[...this.state.entries, newEntry]});
     this.setState({firstNameField:''});
