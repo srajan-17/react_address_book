@@ -58,7 +58,8 @@ class App extends Component {
     "firstNameField": '',
     "lastNameField": '',
     "birthdayField": '',
-    "telephoneField": ''
+    "telephoneField": '',
+    "searchText": ''
   }
 
   addEntryHandler = (event) => {
@@ -84,6 +85,20 @@ class App extends Component {
     this.setState({"entries": entries});
   }
 
+  searchHandler = (e) => {
+    console.log(e);
+    let entries = [...this.state.entries];
+    if (e === '') {
+      this.setState({"entries": entries});
+    }
+    else {
+      let filteredEntries = entries.filter(item => {
+        item.FirstName.includes(e) || item.LastName.includes(e) || item.Birthday.includes(e) || item.Telephone.includes(e);
+      });
+      this.setState({"entries": filteredEntries});
+    }
+  }
+
   render = () => {
     return (
       <div className="App">
@@ -98,7 +113,7 @@ class App extends Component {
               <Col>
               </Col>
               <Col>
-                <input type="text" placeholder="Search for entries" onKeyPress={this.searchHandler} onChange={this.searchHandler}/>
+                <input type="text" placeholder="Search for entries" onKeyPress={(e) => this.searchHandler(e.target.value)}/>
               </Col>
             </Form.Row>
             </Form>
