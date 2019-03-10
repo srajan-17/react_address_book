@@ -45,15 +45,19 @@ class App extends Component {
         Birthday: "9/10/1975",
         Telephone: "200-707-8670"
       }
-    ]
+    ],
+    "collapse": false,
+    "formTitle": '',
+    "formDescription": ''
   }
 
   addTodoHandler = (event) => {
     event.preventDefault();
-    let newTodo = {
-      key: 3,
-      title: this.state.formTitle,
-      description: this.state.formDescription
+    let newEntry = {
+      FirstName: this.state.FirstName,
+      LastName: this.state.LastName,
+      Birthday: this.state.Birthday,
+      Telephone: this.state.Telephone
     };
     this.setState({todos:[...this.state.todos,newTodo]});
     this.setState({formTitle:''});
