@@ -87,7 +87,6 @@ class App extends Component {
     originalEntries.splice(deleteIndex, 1);
     this.originalEntriesCopy = originalEntries;
     this.setState({"originalEntries": originalEntries});
-    this.originalEntriesCopy = this.state.originalEntries;
   }
 
   searchHandler = (char) => {
