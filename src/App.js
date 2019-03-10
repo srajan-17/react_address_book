@@ -4,7 +4,7 @@ import './App.css';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import ListTodos from './ListTodos/ListTodos.js';
+import AllEntries from './AllEntries.js';
 import { generate } from 'randomstring'
 
 class App extends Component {
@@ -89,10 +89,10 @@ class App extends Component {
           <header className="App-header text-left">
             <h1>React Based Address Book</h1>
           </header>
-          <ListTodos 
+          <AllEntries 
             entries={this.state.entries}
             closer={this.removeEntryHandler}>
-          </ListTodos>
+          </AllEntries>
           <h2 className='text-left'>Add An Entry</h2>
           <Form className="text-left" onSubmit={this.addEntryHandler}>
             <Form.Group controlId="formEntry">
