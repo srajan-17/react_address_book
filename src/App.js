@@ -74,7 +74,7 @@ class App extends Component {
       Telephone: this.state.telephoneField
     };
     this.setState({originalEntries:[...this.state.originalEntries, newEntry]});
-    originalEntriesCopy = this.state.originalEntries;
+    this.originalEntriesCopy = this.state.originalEntries;
     this.setState({firstNameField:''});
     this.setState({lastNameField:''});
     this.setState({birthdayField: ''});
@@ -86,20 +86,23 @@ class App extends Component {
     let deleteIndex = originalEntries.findIndex((item) => item.key === key);
     originalEntries.splice(deleteIndex, 1);
     this.setState({"originalEntries": originalEntries});
-    originalEntriesCopy = this.state.originalEntries;
+    this.originalEntriesCopy = this.state.originalEntries;
   }
 
   searchHandler = (char) => {
     console.log(char);
-    if (char = '') {
-      this.setState({"originalEntries": originalEntriesCopy});
+    if (char === '') {
+      this.setState({"originalEntries": this.originalEntriesCopy});
     }
     else {
       let toBeFiltered = [...this.state.originalEntries];
       let filteredEntries = [];
       toBeFiltered.forEach(item => {
-        
+        if (item.FirstName.includes(char) || item.LastName.includes(char) || item.Birthday.includes(char) || item.Telephone.includes(char)) {
+          filteredEntries.push(item);
+        }
       });
+      this.setState({"originalEntries": filteredEntries});
     }
   }
 
