@@ -10,7 +10,7 @@ import { generate } from 'randomstring';
 
 class App extends Component {
   state = {
-    "entries": [
+    "originalEntries": [
       {
         "key": generate(10),
         "FirstName": "Cathy" ,
@@ -62,6 +62,8 @@ class App extends Component {
     "searchText": ''
   }
 
+  originalEntriesCopy = [...this.state.originalEntries];
+
   addEntryHandler = (event) => {
     event.preventDefault();
     let newEntry = {
@@ -71,7 +73,8 @@ class App extends Component {
       Birthday: this.state.birthdayField,
       Telephone: this.state.telephoneField
     };
-    this.setState({entries:[...this.state.entries, newEntry]});
+    this.setState({originalEntries:[...this.state.originalEntries, newEntry]});
+    originalEntriesCopy = this.state.originalEntries;
     this.setState({firstNameField:''});
     this.setState({lastNameField:''});
     this.setState({birthdayField: ''});
@@ -79,23 +82,24 @@ class App extends Component {
   }
 
   removeEntryHandler = (key, e) => {
-    let entries = [...this.state.entries];
-    let deleteIndex = entries.findIndex((item) => item.key === key);
-    entries.splice(deleteIndex, 1);
-    this.setState({"entries": entries});
+    let originalEntries = [...this.state.originalEntries];
+    let deleteIndex = originalEntries.findIndex((item) => item.key === key);
+    originalEntries.splice(deleteIndex, 1);
+    this.setState({"originalEntries": originalEntries});
+    originalEntriesCopy = this.state.originalEntries;
   }
 
-  searchHandler = (e) => {
-    console.log(e);
-    let entries = [...this.state.entries];
-    if (e === '') {
-      this.setState({"entries": entries});
+  searchHandler = (char) => {
+    console.log(char);
+    if (char = '') {
+      this.setState({"originalEntries": originalEntriesCopy});
     }
     else {
-      let filteredEntries = entries.filter(item => {
-        item.FirstName.includes(e) || item.LastName.includes(e) || item.Birthday.includes(e) || item.Telephone.includes(e);
+      let toBeFiltered = [...this.state.originalEntries];
+      let filteredEntries = [];
+      toBeFiltered.forEach(item => {
+        
       });
-      this.setState({"entries": filteredEntries});
     }
   }
 
@@ -113,13 +117,13 @@ class App extends Component {
               <Col>
               </Col>
               <Col>
-                <input type="text" placeholder="Search for entries" onKeyPress={(e) => this.searchHandler(e.target.value)}/>
+                <Form.Control type="text" placeholder="Search for Entries" onKeyDown={e => this.searchHandler(e.target.value)}/>
               </Col>
             </Form.Row>
             </Form>
             <br />
           <AllEntries 
-            entries={this.state.entries}
+            originalEntries={this.state.originalEntries}
             closer={this.removeEntryHandler}>
           </AllEntries>
           <h2 className='text-left'>Add An Entry</h2>

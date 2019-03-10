@@ -5,8 +5,8 @@ import Card from 'react-bootstrap/Card';
 
 function AllEntries(props) {
 
-  let entries = [...props.entries];
-  let addressBook = entries.map((item) =>
+  let originalEntries = [...props.originalEntries];
+  let addressBook = originalEntries.map((item) =>
     <ListGroup.Item key={item.key}>
       <Card className="bg-light border rounded">
         <span key={item.key}
