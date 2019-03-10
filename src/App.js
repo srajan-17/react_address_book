@@ -87,31 +87,46 @@ class App extends Component {
       <div className="App">
         <Container>
           <header className="App-header text-left">
-            <h1>React Based ToDo List</h1>
+            <h1>React Based Address Book</h1>
           </header>
           <ListTodos 
-            todos={this.state.todos}
-            closer={this.closeTodoHandler}>
+            entries={this.state.entries}
+            closer={this.removeEntryHandler}>
           </ListTodos>
-          <h2 className='text-left'>Add A ToDo</h2>
-          <Form className="text-left" onSubmit={this.addTodoHandler}>
-            <Form.Group controlId="formToDo">
-              <Form.Label>Title</Form.Label>
+          <h2 className='text-left'>Add An Entry</h2>
+          <Form className="text-left" onSubmit={this.addEntryHandler}>
+            <Form.Group controlId="formEntry">
+              <Form.Label>First Name</Form.Label>
               <Form.Control 
                 type="text" 
-                placeholder="Enter Title" 
-                value={this.state.formTitle}
-                onChange={(e) => this.setState({formTitle: e.target.value})}/>
-              <Form.Label>Description</Form.Label>
-              <Form.Control as="textarea" 
-                rows="3" 
-                placeholder="Enter Description" 
-                value={this.state.formDescription}
-                onChange={(e) => this.setState({formDescription:e.target.value})}/>
+                placeholder="Enter First Name" 
+                value={this.state.firstNameField}
+                onChange={(e) => this.setState({firstNameField: e.target.value})}/>
+              
+              <Form.Label>Last Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Last Name" 
+                value={this.state.lastNameField}
+                onChange={(e) => this.setState({lastNameField: e.target.value})}/>
+              
+              <Form.Label>Birthday</Form.Label>
+              <Form.Control 
+                type="text" 
+                placeholder="Enter Birthday" 
+                value={this.state.birthdayField}
+                onChange={(e) => this.setState({birthdayField: e.target.value})}/>
+              
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter Phone Number" 
+                value={this.state.telephoneField}
+                onChange={(e) => this.setState({telephoneField: e.target.value})}/>
             </Form.Group>
-            <Button variant="primary" type="submit" >
-            Add Todo
-            </Button>
+
+            <Button variant="primary" type="submit" >Add Todo</Button>
+
           </Form>
         </Container>
       </div>
