@@ -6,7 +6,9 @@
 > To delete, the trash icon must be pressed twice.
 > Entries can be searched for using the search box.
 
-> Note: A 'node-modules' folder containing the react, react-bootstrap, and randomstring libraries must be in the root directory for the project to work.
+> Notes: 
+> - A 'node-modules' folder containing the react, react-bootstrap, and randomstring libraries must be in the root directory for the project to work.
+> - To run the page, run `npm start` in the command line, making sure the current directory is the root directory of the project.
 
 > Minor Bugs:
 > - 1 - When adding new entries, sometimes the new entry is duplicated in the list. However after using the search box to search for anything the duplicate disappears.
