@@ -1,7 +1,16 @@
 .App {
   text-align: center;
+  background-color: #ffff99;
 }
 
 .fa-trash {
+  color: red;
+}
+
+#card {
+  background-color: #00ff00;
+}
+
+#delete-text {
   color: red;
 }

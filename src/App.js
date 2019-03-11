@@ -133,6 +133,7 @@ class App extends Component {
       <div className="App">
         <Container>
           <header>
+            <br />
             <h1>Address Book</h1>
           </header>
           <Form>
@@ -151,7 +152,8 @@ class App extends Component {
             originalEntries={this.state.originalEntries}
             closer={this.removeEntryHandler}>
           </AllEntries>
-          <h2 className='text-left'>Add An Entry</h2>
+          <br />
+          <h2 className='text-center'>Add An Entry</h2>
           <Form className="text-left" onSubmit={this.addEntryHandler}>
             <Form.Group controlId="formEntry">
               <Form.Label>First Name</Form.Label>
